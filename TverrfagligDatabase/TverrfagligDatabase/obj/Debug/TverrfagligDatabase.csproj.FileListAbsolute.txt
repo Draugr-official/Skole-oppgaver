@@ -1,0 +1,16 @@
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\bin\Debug\TverrfagligDatabase.exe.config
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\bin\Debug\TverrfagligDatabase.exe
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\bin\Debug\TverrfagligDatabase.pdb
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\TverrfagligDatabase.csproj.AssemblyReference.cache
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\TverrfagligDatabase.csproj.SuggestedBindingRedirects.cache
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\MainWindow.g.cs
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\App.g.cs
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\TverrfagligDatabase_MarkupCompile.cache
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\TverrfagligDatabase_MarkupCompile.lref
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\MainWindow.baml
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\TverrfagligDatabase.g.resources
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\TverrfagligDatabase.Properties.Resources.resources
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\TverrfagligDatabase.csproj.GenerateResource.cache
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\TverrfagligDatabase.csproj.CoreCompileInputs.cache
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\TverrfagligDatabase.exe
+C:\Users\andbj\source\repos\TverrfagligDatabase\TverrfagligDatabase\obj\Debug\TverrfagligDatabase.pdb
