@@ -12,7 +12,7 @@ namespace TO_AI
             for(; ; )
             {
                 /* Preparation */
-                Dataset dataset = new Dataset(File.ReadAllText("text.ds"));
+                Dataset dataset = new Dataset(File.ReadAllText("text.ds")); /* text.ds is the dataset for the matcher */
                 Matcher matcher = new Matcher(dataset);
 
                 /* Execution */
