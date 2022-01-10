@@ -17,6 +17,7 @@ namespace TO_AI.Trainer
         /// <param name="Data"></param>
         public Dataset(string Data)
         {
+            /* Splits dataset from into a higher format */
             string[] sentences = Data.ToLower().Replace(". ", ".").Split('.');
             foreach(string sentence in sentences)
             {
