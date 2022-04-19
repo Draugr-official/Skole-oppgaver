@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    background-color: rgb(235,240,241);
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    width: 700px;
+}
+
+.flexcontainer {
+    display: flex;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    justify-content: space-between;
+}
+
+.table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.column {
+    display: flex;
+
+    border-color: #000000;
+}
+
+.rowleft {
+    border-left: 0px;
+    border-right: 2px;
+    border-top: 2px;
+    border-bottom: 2px;
+    width: 70px;
+    height: 70px;
+}
+
+.rowright {
+    border-left: 2px;
+    border-right: 0px;
+    border-top: 2px;
+    border-bottom: 2px;
+    width: 70px;
+    height: 70px;
+}
+
+#you {
+    position:relative;
+    z-index: -1;
+    transition: 300ms;
+}
+
+#opponent {
+    position:relative;
+    z-index: -1;
+    transition: 300ms;
+}
