@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/lightstyle.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div align="center" class="flexcontainer">
+                <div>
+                    <img id="you" src="images/spiller_stein.png" alt="">
+                    <p id="youText" align="center">You threw paper.</p>
+                </div>
+                <div>
+                    <img id="opponent" src="images/maskin_stein.png" alt="">
+                    <p id="opponentText" align="center">Your opponent threw rock.</p>
+                </div>
+            </div>
+            <hr>
+            <button onclick="startGame()">Prøv igjen</button>
+            <div class="table">
+                <div class="column">
+                    <div class="rowleft">
+                        <p>0</p>
+                    </div>
+                    <div class="rowright">
+                        <p>1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var onGoing = false;
+
+            var youElement = document.getElementById("you"); // spiller_?
+            var youText = document.getElementById("youText");
+
+            var opponentElement = document.getElementById("opponent"); // maskin_?
+            var opponentText = document.getElementById("opponentText");
+
+            var youImages = {
+                1: "images/spiller_stein.png",
+                2: "images/spiller_saks.png",
+                3: "images/spiller_papir.png"
+            }
+
+            var opponentImages = {
+                1: "images/maskin_stein.png",
+                2: "images/maskin_saks.png",
+                3: "images/maskin_papir.png"
+            }
+
+            var castTypes = {
+                1: "rock",
+                2: "scissors",
+                3: "paper"
+            }
+
+            async function startGame()
+            {
+                if(!onGoing)
+                {
+                    onGoing = true;
+
+                    youElement.src = 'images/spiller_stein.png';
+                    opponentElement.src = 'images/maskin_stein.png';
+
+                    youElement.style.transform = 'rotate(40deg)';
+                    opponentElement.style.transform = 'rotate(-40deg)';
+                    await new Promise(r => setTimeout(r, 200));
+                    youElement.style.transform = 'rotate(0deg)';
+                    opponentElement.style.transform = 'rotate(0deg)';
+                    await new Promise(r => setTimeout(r, 200));
+                    youElement.style.transform = 'rotate(40deg)';
+                    opponentElement.style.transform = 'rotate(-40deg)';
+                    await new Promise(r => setTimeout(r, 200));
+                    youElement.style.transform = 'rotate(0deg)';
+                    opponentElement.style.transform = 'rotate(0deg)';
+                    await new Promise(r => setTimeout(r, 200));
+
+                    var youThrow = Math.floor(Math.random() * 100 / 10 % 3) + 1;
+                    var opponentThrow = Math.floor(Math.random() * 100 / 10 % 3) + 1;
+
+                    youElement.src = youImages[youThrow];
+                    opponentElement.src = opponentImages[opponentThrow];
+
+                    youText.innerText = "You threw " + castTypes[youThrow] + ".";
+                    opponentText.innerText = "Your opponent threw " + castTypes[opponentThrow] + ".";
+
+
+                    onGoing = false;
+                }
+            }
+        </script>
+    </body>
+</html>
