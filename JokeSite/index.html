@@ -3,6 +3,7 @@
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
         <link rel="stylesheet" href="css/darkstyle.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="js/script.js">
     </head>
     <body>
         <div class="card">
@@ -14,10 +15,105 @@
                     </button>
                 </div>
                 <div class="subcard">
-                    <input type="text" placeholder="Enter a word the joke should contain" value="Yo"/>
-                    <button>Press me</button>
+                    <div class="flexbox">
+                        <div class="tag" onclick="selectTag(this)">
+                            Explicit
+                        </div>
+                        <div class="tag" onclick="selectTag(this)">
+                            Two part
+                        </div>
+                    </div>
+                    
+                    <div class="textbox"><div class="textbox-content">Press "Construct joke" to begin</div></div>
+                    <button onclick="getJoke()">Construct joke</button>
                 </div>
             </div>
         </div>
     </body>
+    <script>
+        function selectTag(element)
+        {
+            if(!element.hasAttribute('active'))
+            {
+                element.setAttribute('active', 'false');
+            }
+
+            if(element.getAttribute('active') == 'false')
+            {
+                element.setAttribute('active', 'true');
+                element.style.backgroundColor = '#49915f';
+            }
+            else
+            {
+                element.setAttribute('active', 'false');
+                element.style.backgroundColor = '#3a3a3a';
+            }
+
+            if(element.innerText == 'Two part')
+            {
+                if(element.getAttribute('active') == 'true')
+                {
+                    params[1] = 'type=twopart';
+                }
+                else
+                {
+                    params[1] = 'type=single';
+                }
+            }
+
+            if(element.innerText == 'Explicit')
+            {
+                if(element.getAttribute('active') == 'true')
+                {
+                    params[0] = 'blacklistFlags=';
+                }
+                else
+                {
+                    params[0] = 'blacklistFlags=nsfw,religious, political,racist,sexist,explicit';
+                }
+            }
+        }
+
+        function setJokeText(input){
+            var text = document.getElementsByClassName("textbox-content")[0];
+            text.innerHTML = input;
+        }
+
+        var params = [
+                "blacklistFlags=nsfw,religious,racist",
+                "type=single",
+            ];
+
+        function getJoke() {
+            var baseURL = "https://v2.jokeapi.dev";
+            var categories = ["Programming", "Misc", "Pun", "Spooky", "Christmas"];
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", baseURL + "/joke/" + categories.join(",") + "?" + params.join("&"));
+
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState == 4 && xhr.status < 300) // readyState 4 means request has finished + we only want to parse the joke if the request was successful (status code lower than 300)
+                {
+                    var randomJoke = JSON.parse(xhr.responseText);
+
+                    if(randomJoke.type == "single")
+                    {
+                        // If type == "single", the joke only has the "joke" property
+                        setJokeText(randomJoke.joke);
+                    }
+                    else
+                    {
+                        // If type == "single", the joke only has the "joke" property
+                        setJokeText(randomJoke.setup + "\n" + randomJoke.delivery);
+                    }
+                }
+                else if(xhr.readyState == 4)
+                {
+                    alert("Error while requesting joke.\n\nStatus code: " + xhr.status + "\nServer response: " + xhr.responseText);
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
 </html>

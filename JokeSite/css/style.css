@@ -35,3 +35,21 @@ body {
     padding-left: 5px;
     padding-right: 7px;
 }
+
+.textbox {
+    overflow: auto;
+    background-color: #202020;
+    border: solid 1px #454545;
+    color: #FFF;
+    outline: none;
+    caret-color: rgb(189, 189, 189);
+    border-radius: 8px;
+    height: 245px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.textbox-content {
+    color: #D5D5D5;
+    margin: 8px 12px 8px 12px;
+}
