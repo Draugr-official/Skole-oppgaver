@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="table">
+            <div class="row">
+                <div class="cell">
+                    yoooo
+                </div>
+                <div class="cell">
+                    brooo
+                </div>
+            </div>
+        </div>
+        <script>
+            function readTextFile(file)
+            {
+                var rawData = "";
+                var rawFile = new XMLHttpRequest();
+                rawFile.open("GET", file, false);
+                rawFile.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=UTF8');
+                rawFile.onreadystatechange = function ()
+                {
+                    if(rawFile.readyState === 4)
+                    {
+                        if(rawFile.status === 200 || rawFile.status == 0)
+                        {
+                            var allText = rawFile.responseText;
+                            rawData = allText;
+                        }
+                    }
+                }
+                rawFile.send(null);
+
+                return rawData;
+            }
+
+            function displayCsv(data)
+            {
+                
+            }
+
+            console.log(readTextFile("http://localhost:5500/data/Reiser.csv"));
+        </script>
+    </body>
+</html>
